@@ -28,11 +28,12 @@ class AssetFetcher(private val context: Context) {
      */
     suspend fun fetchAsset(assetUrl: String, fileName: String): Result<File> {
         return withContext(Dispatchers.IO) {
+            var connection: HttpURLConnection? = null
             try {
                 Log.d(TAG, "Starting to fetch asset: $fileName from $assetUrl")
                 
                 val url = URL(assetUrl)
-                val connection = url.openConnection() as HttpURLConnection
+                connection = url.openConnection() as HttpURLConnection
                 connection.connectTimeout = 10000
                 connection.readTimeout = 10000
                 connection.requestMethod = "GET"
@@ -65,12 +66,13 @@ class AssetFetcher(private val context: Context) {
                     }
                 }
 
-                connection.disconnect()
                 Result.success(outputFile)
                 
             } catch (e: Exception) {
                 Log.e(TAG, "Error fetching asset: ${e.message}", e)
                 Result.failure(e)
+            } finally {
+                connection?.disconnect()
             }
         }
     }
