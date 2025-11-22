@@ -128,7 +128,8 @@ This is an Android application called "KOBANI Asset Fetcher" (bookish-pancake) t
 
 ## Additional Notes
 
-- The app name is "AssetFetcher" in the build configuration
+- The root project name is "AssetFetcher" (in `settings.gradle`)
+- The app display name is "KOBANI Asset Fetcher" (in `AndroidManifest.xml`)
 - The package name is `com.kobani.assetfetcher`
 - Kotlin version: 1.8.0
 - Android Gradle Plugin: 7.4.0
