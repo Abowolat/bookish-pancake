@@ -18,8 +18,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="قم ب سحب الاصول الان"
-        android:textSize="18sp"
+        android:text="سحب جميع الاصول المشفرة والبطاقات\nPull All Encrypted Assets &amp; Cards"
+        android:textSize="16sp"
         android:layout_marginBottom="32dp"
         android:gravity="center" />
 
@@ -27,7 +27,7 @@
         android:id="@+id/fetch_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="سحب الاصول الان\nFetch Assets Now"
+        android:text="🔄 سحب جميع الاصول الان\n🔄 Pull All Assets Now"
         android:textSize="16sp"
         android:padding="16dp"
         android:layout_marginBottom="8dp" />
@@ -36,7 +36,7 @@
         android:id="@+id/clear_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="مسح الاصول\nClear Assets"
+        android:text="🗑️ مسح جميع الاصول\n🗑️ Clear All Assets"
         android:textSize="16sp"
         android:padding="16dp"
         android:layout_marginBottom="16dp" />
@@ -54,7 +54,7 @@
         android:id="@+id/status_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="انقر على الزر لسحب الاصول\nClick button to fetch assets"
+        android:text="انقر على الزر لسحب جميع الاصول (عادية، مشفرة، بطاقات)\nClick button to pull all assets (regular, encrypted, cards)"
         android:textSize="14sp"
         android:padding="12dp"
         android:background="#E0E0E0"
