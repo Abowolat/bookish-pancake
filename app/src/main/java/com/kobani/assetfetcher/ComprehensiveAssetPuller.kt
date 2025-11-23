@@ -56,12 +56,17 @@ class ComprehensiveAssetPuller(private val context: Context) {
                 val encryptedResults = encryptedResultsDeferred.await()
                 val cardResults = cardResultsDeferred.await()
 
+                // Determine overall success based on individual results
+                val hasFailures = regularResults.any { !it.isSuccess } ||
+                                 encryptedResults.any { !it.isSuccess } ||
+                                 cardResults.any { !it.isSuccess }
+
                 ComprehensivePullResult(
                     regularAssets = regularResults,
                     encryptedAssets = encryptedResults,
                     cardAssets = cardResults,
-                    isSuccess = true,
-                    error = null
+                    isSuccess = !hasFailures,
+                    error = if (hasFailures) "Some assets failed to download" else null
                 )
 
             } catch (e: Exception) {

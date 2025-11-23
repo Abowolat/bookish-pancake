@@ -19,7 +19,6 @@ import kotlinx.coroutines.withContext
  */
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var assetFetcher: AssetFetcher
     private lateinit var comprehensiveAssetPuller: ComprehensiveAssetPuller
     private lateinit var fetchButton: Button
     private lateinit var clearButton: Button
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        assetFetcher = AssetFetcher(this)
         comprehensiveAssetPuller = ComprehensiveAssetPuller(this)
 
         fetchButton = findViewById(R.id.fetch_button)
